@@ -49,7 +49,7 @@
 \newif\ifenglish
 \newif\ifnoheadfoot
 \englishtrue
-\noheadfoottrue
+\noheadfootfalse
 
 \usepackage{verbatim}
 
@@ -512,7 +512,7 @@ examples and further notes on the mechanism in the file
 
 \LaTeX{} 中处理选项的经典方法是使用 \cs{ProcessOptions}，将列表中的每个条目视为一个字符串。
 许多包作者试图通过将每个条目视为键值对（keyval）来扩展这种处理。
-迄今为止，这需要使用额外的软件包，例如 \cs{kvoptions}。
+迄今为止，这需要使用额外的软件包，例如 \pkg{kvoptions}。
 
 \begin{english}
 The classical \LaTeXe{} method for handling options, using \cs{ProcessOptions},
