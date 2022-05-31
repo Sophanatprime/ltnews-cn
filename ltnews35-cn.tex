@@ -49,7 +49,7 @@
 \newif\ifenglish
 \newif\ifnoheadfoot
 \englishtrue
-\noheadfootfalse
+\noheadfoottrue 
 
 \usepackage{verbatim}
 
@@ -348,7 +348,7 @@ with \cs{IfDocumentMetadataTF}.
 
 \section{\pkg{latex-lab} 包, The \pkg{latex-lab} bundle}
 
-我们添加了一个新的 latex-laboratory 包（bundle），我们在其中放置了只能通过
+我们添加了一个新的 latex-laboratory 包（bundle），我们在其中放置了只能通过 
 \cs{DocumentMetadata} 声明使用的新代码，而且最重要的是，它正在开发中，如有更改，
 将不会另行通知。这意味着那里提供的命令和接口可能会在一些公开测试后再次被更改或删除。 
 可以通过 \cs{DocumentMetadata} 的 \texttt{testphase} 键访问代码。
@@ -392,7 +392,7 @@ to drop the \texttt{testphase} key setting.
 
 mark 机制是 TeX 将信息传递给页面构建过程的方式，该过程异步发生，以便将执行时
 页眉和页脚的相关数据传达给后者，例如，页面上的第一部分或最后一个小节是什么，等等。
-但是，标记也可以用于其他目的。新的内核模块为独立类的标记提供了一种通用机制。
+但是，标记也可以用于其他目的。新的内核模块为互相独立的 mark 的使用提供了一种通用机制。
 
 \begin{english}
 The mark mechanism is \TeX{}'s way to pass information to the
@@ -510,9 +510,9 @@ examples and further notes on the mechanism in the file
 
 \section{\thbox{键值选项} A key/value approach to option handling}
 
-\LaTeX{} 中处理选项的经典方法是使用 \cs{ProcessOptions}，将列表中的每个条目视为一个字符串。
-许多包作者试图通过将每个条目视为键值对（keyval）来扩展这种处理。
-迄今为止，这需要使用额外的软件包，例如 \pkg{kvoptions}。
+\LaTeX{} 中处理选项的经典方法是使用 \cs{ProcessOptions}，将列表中的每项视为一个字符串。
+许多包作者试图通过将每项视为键值对（keyval）来扩展这种处理。
+迄今为止，这需要使用额外的宏包，例如 \pkg{kvoptions}。
 
 \begin{english}
 The classical \LaTeXe{} method for handling options, using \cs{ProcessOptions},
@@ -547,7 +547,7 @@ unless explicitly given as an optional argument:
 \end{verbatim}
 \end{english}
 
-为了支持为此机制创建密钥选项，添加了新命令 \cs{DeclareKeys}。
+为了支持为此机制创建键值选项，添加了新命令 \cs{DeclareKeys}。
 这使用与 \pkg{l3keys} 或 \pkg{pgfkeys} 相同的通用方法工作：
 每个键都有一个或多个定义其行为的\emph{属性}。
 
