@@ -1,4 +1,4 @@
-# ltnews-cn
+# ltnews-cn (unofficial)
 ltnews chinese translation (unofficial)
 
 For compiling, one maybe need LaTeX-dev, e.g., `pdflatex-dev ltnews...`. 
